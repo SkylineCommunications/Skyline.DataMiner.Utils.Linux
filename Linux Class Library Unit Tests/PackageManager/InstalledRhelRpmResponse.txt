@@ -1,0 +1,8 @@
+[sudo] password for skyline:
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: miroir.univ-lorraine.fr
+ * extras: ftp.pasteur.fr
+ * updates: miroir.univ-lorraine.fr
+Installed Packages
+rpm.x86_64                                                                      4.11.3-45.el7                                                                      @anaconda

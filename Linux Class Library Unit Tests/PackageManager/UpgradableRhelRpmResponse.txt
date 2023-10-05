@@ -1,0 +1,16 @@
+[sudo] password for skyline:
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: miroir.univ-lorraine.fr
+ * extras: ftp.pasteur.fr
+ * updates: miroir.univ-lorraine.fr
+base                                                                                                                                                 | 3.6 kB  00:00:00
+cassandra/signature                                                                                                                                  |  833 B  00:00:00
+cassandra/signature                                                                                                                                  | 3.0 kB  00:00:00 !!!
+Not using downloaded cassandra/repomd.xml because it is older than what we have:
+  Current   : Tue Jul 18 22:23:44 2023
+  Downloaded: Wed Jul 12 21:59:24 2023
+extras                                                                                                                                               | 2.9 kB  00:00:00
+updates                                                                                                                                              | 2.9 kB  00:00:00
+
+rpm.x86_64                                                                      4.11.3-48.el7_9                                                                      updates

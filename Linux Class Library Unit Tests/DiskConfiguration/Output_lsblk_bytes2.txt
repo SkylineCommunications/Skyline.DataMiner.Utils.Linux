@@ -1,0 +1,19 @@
+{
+   "blockdevices": [
+      {"name":"loop0", "maj:min":"7:0", "rm":false, "size":64917504, "ro":true, "type":"loop", "mountpoint":"/snap/core20/1328"},
+      {"name":"loop1", "maj:min":"7:1", "rm":false, "size":70508544, "ro":true, "type":"loop", "mountpoint":"/snap/lxd/21835"},
+      {"name":"loop2", "maj:min":"7:2", "rm":false, "size":45703168, "ro":true, "type":"loop", "mountpoint":"/snap/snapd/14978"},
+      {"name":"sda", "maj:min":"8:0", "rm":false, "size":64424509440, "ro":false, "type":"disk", "mountpoint":null,
+         "children": [
+            {"name":"sda1", "maj:min":"8:1", "rm":false, "size":1048576, "ro":false, "type":"part", "mountpoint":null},
+            {"name":"sda2", "maj:min":"8:2", "rm":false, "size":2147483648, "ro":false, "type":"part", "mountpoint":"/boot"},
+            {"name":"sda3", "maj:min":"8:3", "rm":false, "size":62273880064, "ro":false, "type":"part", "mountpoint":null,
+               "children": [
+                  {"name":"ubuntu--vg-ubuntu--lv", "maj:min":"253:0", "rm":false, "size":31134318592, "ro":false, "type":"lvm", "mountpoint":"/"}
+               ]
+            }
+         ]
+      },
+      {"name":"sr0", "maj:min":"11:0", "rm":true, "size":1331691520, "ro":false, "type":"rom", "mountpoint":null}
+   ]
+}
