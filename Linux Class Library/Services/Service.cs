@@ -70,5 +70,10 @@
 		{
 			linux.Connection.RunCommand($"sudo systemctl stop {this.serviceName}.service");
 		}
+
+		public void Enable()
+		{
+			linux.Connection.RunCommand($"sudo systemctl enable {this.serviceName}.service");
+		}
 	}
 }

@@ -43,5 +43,10 @@
 		/// Stops the service.
 		/// </summary>
 		void Stop();
+
+		/// <summary>
+		/// Enables the service.
+		/// </summary>
+		void Enable();
 	}
 }
