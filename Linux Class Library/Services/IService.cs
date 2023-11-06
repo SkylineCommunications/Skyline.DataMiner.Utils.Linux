@@ -13,6 +13,12 @@
 		bool IsInstalled();
 
 		/// <summary>
+		/// Checks if the service is enabled.
+		/// </summary>
+		/// <returns<c>true</c> if the service is enabled; otherwise <c>false</c>.></returns>
+		bool IsEnabled();
+
+		/// <summary>
 		/// Checks if the service is running.
 		/// </summary>
 		/// <returns><c>true</c> if service is running; otherwise <c>false</c>.</returns>

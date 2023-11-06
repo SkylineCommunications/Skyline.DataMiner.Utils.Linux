@@ -21,6 +21,12 @@
 			this.linux = linux;
 		}
 
+		public bool IsEnabled()
+		{
+			var enabled = linux.Connection.RunCommand($"sudo systemctl is-enabled {this.serviceName}.service");
+			return enabled == "enabled";
+		}
+
 		public bool IsInstalled()
 		{
 			try
