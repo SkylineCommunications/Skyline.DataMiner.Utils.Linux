@@ -69,7 +69,7 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 		/// </summary>
 		/// <param name="lhs">The first object to compare.</param>
 		/// <param name="rhs">The second object to compare.</param>
-		/// <returns><c>false</c> if the operands are equal; otherwise, <c>true</c>.</returns>
+		/// <returns><see langword="false"/> if the operands are equal; otherwise, <see langword="true"/>.</returns>
 		public static bool operator !=(Permissions lhs, Permissions rhs) => !(lhs == rhs);
 
 		/// <summary>
@@ -77,7 +77,7 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 		/// </summary>
 		/// <param name="lhs">The first object to compare.</param>
 		/// <param name="rhs">The second object to compare.</param>
-		/// <returns><c>true</c> if the operands are equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the operands are equal; otherwise, <see langword="false"/>.</returns>
 		public static bool operator ==(Permissions lhs, Permissions rhs)
 		{
 			if (lhs is null)
@@ -99,14 +99,14 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 		/// Compares the object to another object.
 		/// </summary>
 		/// <param name="obj">The object to compare against.</param>
-		/// <returns><c>true</c> if the elements are equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the elements are equal; otherwise, <see langword="false"/>.</returns>
 		public override bool Equals(object obj) => this.Equals(obj as Permissions);
 
 		/// <summary>
 		/// Indicates whether the current object is equal to another object of the same type.
 		/// </summary>
 		/// <param name="other">An object to compare with this object.</param>
-		/// <returns><c>true</c> if the elements are equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the elements are equal; otherwise, <see langword="false"/>.</returns>
 		public bool Equals(Permissions other)
 		{
 			if (UserPermission == other.UserPermission && GroupPermission == other.GroupPermission && OtherPermission == other.OtherPermission)
@@ -123,6 +123,10 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 		/// <returns>The hash code.</returns>
 		public override int GetHashCode() => (UserPermission, GroupPermission, OtherPermission).GetHashCode();
 
+		/// <summary>
+		/// Generate the text for the permissions (e.g. rwxr--r--).
+		/// </summary>
+		/// <returns>The text of the permission.</returns>
 		public override string ToString()
 		{
 			return PermissionString;
@@ -256,7 +260,7 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 			/// </summary>
 			/// <param name="lhs">The first object to compare.</param>
 			/// <param name="rhs">The second object to compare.</param>
-			/// <returns><c>false</c> if the operands are equal; otherwise, <c>true</c>.</returns>
+			/// <returns><see langword="false"/> if the operands are equal; otherwise, <see langword="true"/>.</returns>
 			public static bool operator !=(Permission lhs, Permission rhs) => !(lhs == rhs);
 
 			/// <summary>
@@ -264,7 +268,7 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 			/// </summary>
 			/// <param name="lhs">The first object to compare.</param>
 			/// <param name="rhs">The second object to compare.</param>
-			/// <returns><c>true</c> if the operands are equal; otherwise, <c>false</c>.</returns>
+			/// <returns><see langword="true"/> if the operands are equal; otherwise, <see langword="false"/>.</returns>
 			public static bool operator ==(Permission lhs, Permission rhs)
 			{
 				if (lhs is null)
@@ -286,14 +290,14 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem
 			/// Compares the object to another object.
 			/// </summary>
 			/// <param name="obj">The object to compare against.</param>
-			/// <returns><c>true</c> if the elements are equal; otherwise, <c>false</c>.</returns>
+			/// <returns><see langword="true"/> if the elements are equal; otherwise, <see langword="false"/>.</returns>
 			public override bool Equals(object obj) => this.Equals(obj as Permission);
 
 			/// <summary>
 			/// Indicates whether the current object is equal to another object of the same type.
 			/// </summary>
 			/// <param name="other">An object to compare with this object.</param>
-			/// <returns><c>true</c> if the elements are equal; otherwise, <c>false</c>.</returns>
+			/// <returns><see langword="true"/> if the elements are equal; otherwise, <see langword="false"/>.</returns>
 			public bool Equals(Permission other)
 			{
 				if (other is null)

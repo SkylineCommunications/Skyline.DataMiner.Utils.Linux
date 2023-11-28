@@ -9,19 +9,19 @@
 		/// <summary>
 		/// Checks if the service is installed.
 		/// </summary>
-		/// <returns><c>true</c> if the service is installed; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the service is installed; otherwise <see langword="false"/>.</returns>
 		bool IsInstalled();
 
 		/// <summary>
 		/// Checks if the service is enabled.
 		/// </summary>
-		/// <returns<c>true</c> if the service is enabled; otherwise <c>false</c>.></returns>
+		/// <returns><see langword="true"/> if the service is enabled; otherwise <see langword="false"/>.></returns>
 		bool IsEnabled();
 
 		/// <summary>
 		/// Checks if the service is running.
 		/// </summary>
-		/// <returns><c>true</c> if service is running; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if service is running; otherwise <see langword="false"/>.</returns>
 		bool IsRunning();
 
 		/// <summary>

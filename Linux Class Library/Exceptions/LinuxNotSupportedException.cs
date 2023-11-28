@@ -12,7 +12,7 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="LinuxNotSupportedException"/> class.
 		/// </summary>
-		public LinuxNotSupportedException() : base ("Operating system not (yet) support by the library.")
+		public LinuxNotSupportedException() : base("Operating system not (yet) support by the library.")
 		{
 		}
 

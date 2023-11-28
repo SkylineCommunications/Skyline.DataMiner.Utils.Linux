@@ -16,13 +16,13 @@
 		/// Checks if a specified port is open. If the firewall is disabled, it is closed by default.
 		/// </summary>
 		/// <param name="portNumber">The port number to be checked.</param>
-		/// <returns><c>true</c> if the port is open; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the port is open; otherwise <see langword="false"/>.</returns>
 		bool IsOpen(int portNumber);
 
 		/// <summary>
 		/// Checks if the firewall is currently running.
 		/// </summary>
-		/// <returns><c>true</c> if the firewall is running; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the firewall is running; otherwise <see langword="false"/>.</returns>
 		bool IsRunning();
 
 		/// <summary>

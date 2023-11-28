@@ -17,6 +17,7 @@
 		/// </summary>
 		/// <param name="server">The Linux machine.</param>
 		/// <param name="sourceListItems">The full list of source list items to have in the file.</param>
+		/// <param name="sourceListFilePath">The path of the source list file.</param>
 		/// <exception cref="LinuxNotSupportedException">The Linux machine is not Debian based.</exception>
 		public static void AddOrUpdateDebianSourceList(this ILinux server, IEnumerable<SourceListItem> sourceListItems, string sourceListFilePath)
 		{
@@ -35,7 +36,7 @@
 		/// <param name="server">The Linux machine.</param>
 		/// <param name="keysUrl">The URL to the keys.</param>
 		/// <param name="output">The output returned by running the command.</param>
-		/// <returns><c>true</c> if the keys were added; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the keys were added; otherwise <see langword="false"/>.</returns>
 		public static bool TryAddKeys(this ILinux server, string keysUrl, out string output)
 		{
 			output = server.Connection.RunCommand($"curl {keysUrl} | sudo apt-key add -");

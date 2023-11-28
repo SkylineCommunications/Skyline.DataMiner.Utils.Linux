@@ -2,8 +2,6 @@
 
 using Moq;
 
-using Skyline.DataMiner.Utils.Linux.SoftwareBundleManager;
-
 namespace Skyline.DataMiner.Utils.Linux.SoftwareBundleManager.Tests
 {
 	[TestClass()]

@@ -80,7 +80,7 @@ namespace Skyline.DataMiner.Utils.Linux.DiskConfiguration
 		/// </summary>
 		/// <param name="lhs">The first object to compare.</param>
 		/// <param name="rhs">The second object to compare.</param>
-		/// <returns><c>false</c> if the operands are equal; otherwise, <c>true</c>.</returns>
+		/// <returns><see langword="false"/> if the operands are equal; otherwise, <see langword="true"/>.</returns>
 		public static bool operator !=(Size lhs, Size rhs) => !(lhs == rhs);
 
 		/// <summary>
@@ -88,7 +88,7 @@ namespace Skyline.DataMiner.Utils.Linux.DiskConfiguration
 		/// </summary>
 		/// <param name="lhs">The first value to compare.</param>
 		/// <param name="rhs">The second value to compare.</param>
-		/// <returns><c>true</c> if <paramref name="lhs"/> is less than <paramref name="rhs"/>; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if <paramref name="lhs"/> is less than <paramref name="rhs"/>; otherwise, <see langword="false"/>.</returns>
 		public static bool operator <(Size lhs, Size rhs) => lhs.Bytes < rhs.Bytes;
 
 		/// <summary>
@@ -96,7 +96,7 @@ namespace Skyline.DataMiner.Utils.Linux.DiskConfiguration
 		/// </summary>
 		/// <param name="lhs">The first value to compare.</param>
 		/// <param name="rhs">The second value to compare.</param>
-		/// <returns><c>true</c> if <paramref name="lhs"/> is less than or equal to <paramref name="rhs"/>; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if <paramref name="lhs"/> is less than or equal to <paramref name="rhs"/>; otherwise, <see langword="false"/>.</returns>
 		public static bool operator <=(Size lhs, Size rhs) => lhs.Bytes <= rhs.Bytes;
 
 		/// <summary>
@@ -104,7 +104,7 @@ namespace Skyline.DataMiner.Utils.Linux.DiskConfiguration
 		/// </summary>
 		/// <param name="lhs">The first object to compare.</param>
 		/// <param name="rhs">The second object to compare.</param>
-		/// <returns><c>true</c> if the operands are equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the operands are equal; otherwise, <see langword="false"/>.</returns>
 		public static bool operator ==(Size lhs, Size rhs)
 		{
 			if (lhs is null)
@@ -127,7 +127,7 @@ namespace Skyline.DataMiner.Utils.Linux.DiskConfiguration
 		/// </summary>
 		/// <param name="lhs">The first value to compare.</param>
 		/// <param name="rhs">The second value to compare.</param>
-		/// <returns><c>true</c> if <paramref name="lhs"/> is greater than <paramref name="rhs"/>; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if <paramref name="lhs"/> is greater than <paramref name="rhs"/>; otherwise, <see langword="false"/>.</returns>
 		public static bool operator >(Size lhs, Size rhs) => lhs.Bytes > rhs.Bytes;
 
 		/// <summary>
@@ -135,21 +135,21 @@ namespace Skyline.DataMiner.Utils.Linux.DiskConfiguration
 		/// </summary>
 		/// <param name="lhs">The first value to compare.</param>
 		/// <param name="rhs">The second value to compare.</param>
-		/// <returns><c>true</c> if <paramref name="lhs"/> is greater than or equal to <paramref name="rhs"/>; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if <paramref name="lhs"/> is greater than or equal to <paramref name="rhs"/>; otherwise, <see langword="false"/>.</returns>
 		public static bool operator >=(Size lhs, Size rhs) => lhs.Bytes >= rhs.Bytes;
 
 		/// <summary>
 		/// Compares the object to another object.
 		/// </summary>
 		/// <param name="obj">The object to compare against.</param>
-		/// <returns><c>true</c> if the elements are equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the elements are equal; otherwise, <see langword="false"/>.</returns>
 		public override bool Equals(object obj) => this.Equals(obj as Size);
 
 		/// <summary>
 		/// Indicates whether the current object is equal to another object of the same type.
 		/// </summary>
 		/// <param name="other">An object to compare with this object.</param>
-		/// <returns><c>true</c> if the elements are equal; otherwise, <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the elements are equal; otherwise, <see langword="false"/>.</returns>
 		public bool Equals(Size other)
 		{
 			if (other == null)

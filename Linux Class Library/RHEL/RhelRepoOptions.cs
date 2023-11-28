@@ -71,6 +71,10 @@ namespace Skyline.DataMiner.Utils.Linux.RHEL
 			}
 		}
 
+		/// <summary>
+		/// The string format of repository options for RHEL based systems
+		/// </summary>
+		/// <returns>The text value.</returns>
 		public override string ToString()
 		{
 			StringBuilder sb = new StringBuilder();

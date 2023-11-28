@@ -2,6 +2,9 @@
 {
 	using Skyline.DataMiner.Utils.Linux.Communication;
 
+	/// <summary>
+	/// The factory methods to create a ILinux object.
+	/// </summary>
 	public static class LinuxFactory
 	{
 		/// <summary>

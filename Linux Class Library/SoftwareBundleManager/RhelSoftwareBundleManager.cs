@@ -6,7 +6,6 @@
 	using System.Text.RegularExpressions;
 
 	using Skyline.DataMiner.Utils.Linux.Exceptions;
-	using Skyline.DataMiner.Utils.Linux.OperatingSystems;
 	using Skyline.DataMiner.Utils.SoftwareBundle;
 
 	internal class RhelSoftwareBundleManager : ISoftwareBundleManager

@@ -2,7 +2,6 @@
 {
 	using System;
 	using System.Collections.Generic;
-	using System.Text;
 	using System.Text.RegularExpressions;
 	using System.Threading;
 
@@ -23,7 +22,6 @@
 		private readonly FixedBuffer<string> buffer = new FixedBuffer<string>();
 		private bool reachedEnd = false;
 		private string lastResp;
-
 
 		internal SshConnection(ConnectionSettings connectionInfo, int retries = 3)
 		{
@@ -149,7 +147,7 @@
 					return reachedEnd;
 				},
 				commandTimeout);
-				
+
 				if (lastResp == null)
 				{
 					throw new System.TimeoutException($"Unable to get the result for '{command}'.");
@@ -171,8 +169,8 @@
 		{
 			List<ExpectAction> actions = new List<ExpectAction>();
 			var passwordAction = new ExpectAction(
-				new Regex($"\\[sudo\\] password for {_connectionSettings.UserName}:"), 
-				(string resp) => 
+				new Regex($"\\[sudo\\] password for {_connectionSettings.UserName}:"),
+				(string resp) =>
 				{
 					buffer.Add(resp);
 					shellStream.WriteLine(_connectionSettings.Password);

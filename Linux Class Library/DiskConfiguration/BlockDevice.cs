@@ -49,6 +49,8 @@
 		public string MountPoint { get; set; }
 
 		/// <summary>
+		/// The name of the block device.
+		/// </summary>
 		[JsonProperty("name")]
 		public string Name { get; set; }
 

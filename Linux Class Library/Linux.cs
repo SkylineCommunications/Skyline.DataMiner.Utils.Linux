@@ -13,8 +13,8 @@
 	using Skyline.DataMiner.Utils.Linux.FileSystem;
 	using Skyline.DataMiner.Utils.Linux.Firewall;
 	using Skyline.DataMiner.Utils.Linux.OperatingSystems;
-	using Skyline.DataMiner.Utils.Linux.SoftwareBundleManager;
 	using Skyline.DataMiner.Utils.Linux.Services;
+	using Skyline.DataMiner.Utils.Linux.SoftwareBundleManager;
 
 	/// <summary>
 	/// Represents a Linux system.

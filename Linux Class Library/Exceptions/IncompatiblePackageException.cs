@@ -19,7 +19,7 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IncompatibleSoftwareBundleException"/>.
 		/// </summary>
-		/// <param name="command">The command.</param>
+		/// <param name="message">The message.</param>
 		public IncompatibleSoftwareBundleException(string message)
 			: base(message)
 		{
@@ -28,7 +28,7 @@
 		/// <summary>
 		/// Initializes a new instance of the <see cref="IncompatibleSoftwareBundleException"/> class with the inner exception that is the cause of this exception.
 		/// </summary>
-		/// <param name="command">The command.</param>
+		/// <param name="message">The message.</param>
 		/// <param name="innerException">The exception that is the cause of the current exception, or a null reference if no inner exception is specified.</param>
 		public IncompatibleSoftwareBundleException(string message, Exception innerException)
 			: base(message, innerException)

@@ -1,6 +1,7 @@
 ﻿namespace Skyline.DataMiner.Utils.Linux.SoftwareBundleManager
 {
 	using System.Collections.Generic;
+
 	using Skyline.DataMiner.Utils.SoftwareBundle;
 
 	/// <summary>
@@ -31,7 +32,6 @@
 		/// <param name="softwareBundle">The name of the software bundle.</param>
 		/// <returns>The version installed.</returns>
 		string GetInstalledVersion(string softwareBundle);
-
 
 		/// <summary>
 		/// Get the version of the upgrade that is available for the software bundle.
@@ -67,7 +67,7 @@
 		/// Verify if the software bundle is installed.
 		/// </summary>
 		/// <param name="softwareBundle">The name of the software bundle.</param>
-		/// <returns><c>true</c> if the software bundle is installed; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the software bundle is installed; otherwise <see langword="false"/>.</returns>
 		bool IsSoftwareBundleInstalled(string softwareBundle);
 
 		/// <summary>
@@ -76,7 +76,7 @@
 		/// <param name="softwareBundle">The software bundle that needs to be installed.</param>
 		/// <param name="isUpgrade">Indicates if the software bundle will upgrade an existing software bundle or install a new one.</param>
 		/// <param name="responsesForPatterns">The dictionary containing the response for every pattern (key).</param>
-		/// <returns><c>true</c> if the installation was successful; otherwise <c>false</c>.</returns>
+		/// <returns><see langword="true"/> if the installation was successful; otherwise <see langword="false"/>.</returns>
 		bool TryInstallSoftwareBundle(IUnZippedSoftwareBundle softwareBundle, bool isUpgrade, Dictionary<string, string> responsesForPatterns = null);
 	}
 }

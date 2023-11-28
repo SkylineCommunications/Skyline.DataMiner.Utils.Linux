@@ -1,4 +1,6 @@
-﻿namespace Skyline.DataMiner.Utils.Linux.Debian
+﻿// Ignore Spelling: Pgp
+
+namespace Skyline.DataMiner.Utils.Linux.Debian
 {
 	using System;
 
@@ -64,6 +66,10 @@
 		/// </summary>
 		public string PgpFilePath { get; set; }
 
+		/// <summary>
+		/// Generate the text for the source list.
+		/// </summary>
+		/// <returns>The text for the source list.</returns>
 		public override string ToString()
 		{
 			string archive = ArchiveType == ArchiveTypes.Deb ? "deb" : "deb-src";
