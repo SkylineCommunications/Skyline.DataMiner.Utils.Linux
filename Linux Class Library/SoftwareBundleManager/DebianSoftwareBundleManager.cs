@@ -132,7 +132,7 @@
 			}
 
 			// Copy the package to the Linux machine
-			string folderLocation = $"/home/{linux.Connection.ConnectionSettings.UserName}/{softwareBundle.SoftwareBundleInfo.Name}_{softwareBundle.SoftwareBundleInfo.Version}";
+			string folderLocation = linux.Connection.ConnectionSettings.UserName == "root" ? $"/root/{softwareBundle.SoftwareBundleInfo.Name}_{softwareBundle.SoftwareBundleInfo.Version}" : $"/home/{linux.Connection.ConnectionSettings.UserName}/{softwareBundle.SoftwareBundleInfo.Name}_{softwareBundle.SoftwareBundleInfo.Version}";
 			var directory = SoftwareBundlesFunctions.UploadFilesFromSoftwareBundle(linux, softwareBundle, folderLocation);
 
 			// Install the package
