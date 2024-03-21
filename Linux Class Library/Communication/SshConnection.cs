@@ -64,21 +64,18 @@
 			{
 				sshClient.Connect();
 			}
-			catch (SshAuthenticationException ex)
+			catch (SshAuthenticationException)
 			{
-				if (ex.ToString().Contains("No suitable authentication method found"))
+				// Try again with keyboard Interactive
+				KeyboardInteractiveAuthenticationMethod keybAuth = new KeyboardInteractiveAuthenticationMethod(ConnectionSettings.UserName);
+				keybAuth.AuthenticationPrompt += new EventHandler<AuthenticationPromptEventArgs>(HandleKeyEvent);
+				ConnectionSettings._connectionInfo = new ConnectionInfo(ConnectionSettings.Host, ConnectionSettings.UserName, keybAuth);
+				if (sshClient != null)
 				{
-					// Try again with keyboard Interactive
-					KeyboardInteractiveAuthenticationMethod keybAuth = new KeyboardInteractiveAuthenticationMethod(ConnectionSettings.UserName);
-					keybAuth.AuthenticationPrompt += new EventHandler<AuthenticationPromptEventArgs>(HandleKeyEvent);
-					ConnectionSettings._connectionInfo = new ConnectionInfo(ConnectionSettings.Host, ConnectionSettings.UserName, keybAuth);
-					if (sshClient != null)
-					{
-						sshClient.Dispose();
-					}
-
-					sshClient = new SshClient(ConnectionSettings.ConnectionInfo);
+					sshClient.Dispose();
 				}
+
+				sshClient = new SshClient(ConnectionSettings.ConnectionInfo);
 			}
 
 			Connected = true;
