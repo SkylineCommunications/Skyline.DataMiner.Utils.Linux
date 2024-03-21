@@ -76,6 +76,7 @@
 				}
 
 				sshClient = new SshClient(ConnectionSettings.ConnectionInfo);
+				sshClient.Connect();
 			}
 
 			Connected = true;
