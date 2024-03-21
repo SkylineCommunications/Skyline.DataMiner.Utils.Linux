@@ -41,5 +41,11 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem.Tests
 			Assert.AreEqual("/etc/cassandra/cassandra.yaml", file.Path, "Path");
 			Assert.AreEqual("cassandra.yaml", file.Name, "Name");
 		}
+
+		[TestMethod()]
+		public void GetFileTestSpaces() 
+		{
+			// TODO
+		}
 	}
 }

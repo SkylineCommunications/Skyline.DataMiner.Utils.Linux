@@ -7,7 +7,7 @@
 	/// </summary>
 	public class ConnectionSettings
 	{
-		private PasswordConnectionInfo _connectionInfo;
+		internal ConnectionInfo _connectionInfo;
 
 		/// <summary>
 		/// Initializes a new instance of the <see cref="ConnectionSettings"/> class using the host, name and password.
@@ -37,7 +37,7 @@
 		/// </summary>
 		public string UserName { get; private set; }
 
-		internal PasswordConnectionInfo ConnectionInfo
+		internal ConnectionInfo ConnectionInfo
 		{
 			get
 			{

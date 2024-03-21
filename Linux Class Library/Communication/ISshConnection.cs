@@ -25,7 +25,7 @@
 		ConnectionSettings ConnectionSettings { get; }
 
 		/// <summary>
-		/// Gets or sets the number of retries that needs to be done for every command send over the SSH connection.
+		/// Gets or sets the number of retries that needs to be done for every command send over the SSH connection (Default: 0)
 		/// </summary>
 		int Retries { get; set; }
 
