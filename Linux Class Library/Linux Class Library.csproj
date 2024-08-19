@@ -1,49 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFramework>net462</TargetFramework>
-	<AssemblyName>Skyline.DataMiner.Utils.Linux</AssemblyName>
-	<RootNamespace>Skyline.DataMiner.Utils.Linux</RootNamespace>
-	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<Authors>SkylineCommunications</Authors>
-	<Company>Skyline Communications</Company>
-	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-	<PackageTags>Skyline;DataMiner</PackageTags>
-	<PackageProjectUrl>https://skyline.be/</PackageProjectUrl>
-	<Description>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Skyline.DataMiner.Utils.Linux</AssemblyName>
+    <RootNamespace>Skyline.DataMiner.Utils.Linux</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>SkylineCommunications</Authors>
+    <Company>Skyline Communications</Company>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageTags>Skyline;DataMiner</PackageTags>
+    <PackageProjectUrl>https://skyline.be/</PackageProjectUrl>
+    <Description>
 		Linux class library that contains assemblies to communicate with a Linux server in DataMiner.
 	</Description>
-	<PackageIcon>Icon.png</PackageIcon>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Nlog.config" />
   </ItemGroup>
-	<ItemGroup>
-		<None Include="..\_NuGetItems\LICENSE.txt">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\_NuGetItems\Icon.png">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-		<None Include="..\README.md">
-			<Pack>True</Pack>
-			<PackagePath>\</PackagePath>
-		</None>
-	</ItemGroup>
+  <ItemGroup>
+    <None Include="..\_NuGetItems\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\_NuGetItems\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.IO.Compression" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Skyline.DataMiner.Utils.SoftwareBundles" Version="1.0.1" />
+    <PackageReference Include="Skyline.DataMiner.Utils.SoftwareBundles" Version="1.0.2" />
     <PackageReference Include="SSH.NET" Version="2023.0.0" />
-    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 </Project>
