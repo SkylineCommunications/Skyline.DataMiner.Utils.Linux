@@ -15,22 +15,23 @@
 	{
 		private const string UpdatedPs1 = "$|*_*|$";
 		private const string UpdatedPs1Regex = "\\$\\|\\*_\\*\\|\\$";
+		private const string LockRegex = "(lock: Could not get lock )(?<lockObject>.+)It is held by process (?<pcocessInfo>.+)\\.\\.\\. 3\\ds";
 
 		private static TimeSpan commandTimeout = new TimeSpan(0, 15, 0);
 		private readonly ConnectionSettings _connectionSettings;
-		private readonly SshClient sshClient;
 		private readonly FixedBuffer<string> buffer = new FixedBuffer<string>();
+		private SshClient sshClient;
 		private bool reachedEnd = false;
 		private string lastResp;
 
-		internal SshConnection(ConnectionSettings connectionInfo, int retries = 3)
+		internal SshConnection(ConnectionSettings connectionInfo, int retries = 0)
 		{
 			this.Retries = retries;
 			this._connectionSettings = connectionInfo;
 			sshClient = new SshClient(connectionInfo.ConnectionInfo);
 		}
 
-		internal SshConnection(int retries = 3)
+		internal SshConnection(int retries = 0)
 		{
 			this.Retries = retries;
 		}
@@ -59,9 +60,38 @@
 
 		public void Connect()
 		{
-			sshClient.Connect();
+			try
+			{
+				sshClient.Connect();
+			}
+			catch (SshAuthenticationException)
+			{
+				// Try again with keyboard Interactive
+				KeyboardInteractiveAuthenticationMethod keybAuth = new KeyboardInteractiveAuthenticationMethod(ConnectionSettings.UserName);
+				keybAuth.AuthenticationPrompt += new EventHandler<AuthenticationPromptEventArgs>(HandleKeyEvent);
+				ConnectionSettings._connectionInfo = new ConnectionInfo(ConnectionSettings.Host, ConnectionSettings.UserName, keybAuth);
+				if (sshClient != null)
+				{
+					sshClient.Dispose();
+				}
+
+				sshClient = new SshClient(ConnectionSettings.ConnectionInfo);
+				sshClient.Connect();
+			}
+
 			Connected = true;
 			RunCommand("hostname");
+		}
+
+		private void HandleKeyEvent(object sender, AuthenticationPromptEventArgs e)
+		{
+			foreach (AuthenticationPrompt prompt in e.Prompts)
+			{
+				if (prompt.Request.IndexOf("Password:", StringComparison.InvariantCultureIgnoreCase) != -1)
+				{
+					prompt.Response = ConnectionSettings.Password;
+				}
+			}
 		}
 
 		public void Disconnect()
@@ -176,6 +206,16 @@
 					shellStream.WriteLine(_connectionSettings.Password);
 				});
 			actions.Add(passwordAction);
+			var lockUnavailable = new ExpectAction(
+				new Regex(LockRegex),
+				(string resp) =>
+				{
+					buffer.Add(resp);
+					lastResp = resp;
+					shellStream.Close();
+					throw new Exceptions.TimeoutException("The command failed as it could not acquire a lock.");
+				});
+			actions.Add(lockUnavailable);
 			var endExpect = new ExpectAction(
 				new Regex(UpdatedPs1Regex),
 				(string resp) =>
