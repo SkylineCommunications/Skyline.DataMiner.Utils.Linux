@@ -15,7 +15,7 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem.Tests
 		public void GetFilesTest()
 		{
 			var linux = new Mock<ILinux>();
-			var fileList = System.IO.File.ReadAllText(@"FileSystem\ls_la_multiple_files.txt");
+			var fileList = System.IO.File.ReadAllText(System.IO.Path.Combine("FileSystem", "ls_la_multiple_files.txt"));
 			var files = BaseFileItem.GetFiles(linux.Object, fileList, "/TestFolder");
 			Assert.AreEqual(25, files.Count(), "total file count");
 			Assert.AreEqual(1, files.Count(f => f.FileType == FileTypes.File), "file count");
@@ -27,7 +27,7 @@ namespace Skyline.DataMiner.Utils.Linux.FileSystem.Tests
 		public void GetFileTest()
 		{
 			var linux = new Mock<ILinux>();
-			var fileOutput = System.IO.File.ReadAllText(@"FileSystem\ls_la_single_file.txt");
+			var fileOutput = System.IO.File.ReadAllText(System.IO.Path.Combine("FileSystem", "ls_la_single_file.txt"));
 			linux.Setup(l => l.Connection.RunCommand(It.IsAny<string>(), null)).Returns(fileOutput);
 			BaseFileItem basefile = BaseFileItem.GetFileItemByPath(linux.Object, "/etc/cassandra/cassandra.yaml", FileTypes.File);
 			var file = new File(basefile);

@@ -15,7 +15,7 @@
 		[TestMethod()]
 		public void ParseOsReleaseFileTest()
 		{
-			var outputText = System.IO.File.ReadAllText(@"OperatingSystems\Ubuntu.txt");
+			var outputText = System.IO.File.ReadAllText(System.IO.Path.Combine("OperatingSystems", "Ubuntu.txt"));
 			OsReleaseInfo os_info = OsReleaseInfo.ParseOsReleaseFile(outputText);
 			Assert.IsNotNull(os_info, "os_info IsNotNull");
 			Assert.AreEqual("Ubuntu", os_info.Name, "os_info.Name AreEqual");
@@ -33,7 +33,7 @@
 		public void GetOperatingSystemTest()
 		{
 			var connection = new Mock<ISshConnection>();
-			var outputText = System.IO.File.ReadAllText(@"OperatingSystems\Ubuntu.txt");
+			var outputText = System.IO.File.ReadAllText(System.IO.Path.Combine("OperatingSystems", "Ubuntu.txt"));
 			connection.Setup(c => c.RunCommand(It.IsAny<string>(), null)).Returns(outputText);
 			var linux = new Linux(connection.Object);
 			var os_info = linux.OsInfo;

@@ -12,7 +12,7 @@ namespace Skyline.DataMiner.Utils.Linux.SoftwareBundleManager.Tests
 		{
 			string packageName = "cassandra";
 			var linux = new Mock<ILinux>();
-			var response = System.IO.File.ReadAllText(@"PackageManager\UpgradableDebCassandraResponse.txt");
+			var response = System.IO.File.ReadAllText(System.IO.Path.Combine("PackageManager", "UpgradableDebCassandraResponse.txt"));
 			linux.Setup(l => l.Connection.RunCommand(It.IsAny<string>(), null)).Returns(response);
 			var packageManager = new DebianSoftwareBundleManager(linux.Object);
 			Assert.AreEqual("4.0.11", packageManager.GetUpgradeVersion(packageName));
@@ -23,7 +23,7 @@ namespace Skyline.DataMiner.Utils.Linux.SoftwareBundleManager.Tests
 		{
 			string packageName = "cassandra";
 			var linux = new Mock<ILinux>();
-			var response = System.IO.File.ReadAllText(@"PackageManager\InstalledDebCassandraResponse.txt");
+			var response = System.IO.File.ReadAllText(System.IO.Path.Combine("PackageManager", "InstalledDebCassandraResponse.txt"));
 			linux.Setup(l => l.Connection.RunCommand(It.IsAny<string>(), null)).Returns(response);
 			var packageManager = new DebianSoftwareBundleManager(linux.Object);
 			Assert.AreEqual("4.0.5", packageManager.GetInstalledVersion(packageName));
@@ -34,7 +34,7 @@ namespace Skyline.DataMiner.Utils.Linux.SoftwareBundleManager.Tests
 		{
 			string packageName = "rpm";
 			var linux = new Mock<ILinux>();
-			var response = System.IO.File.ReadAllText(@"PackageManager\InstalledRhelRpmResponse.txt");
+			var response = System.IO.File.ReadAllText(System.IO.Path.Combine("PackageManager", "InstalledRhelRpmResponse.txt"));
 			linux.Setup(l => l.Connection.RunCommand(It.IsAny<string>(), null)).Returns(response);
 			var packageManager = new RhelSoftwareBundleManager(linux.Object);
 			Assert.AreEqual("4.11.3-45.el7", packageManager.GetInstalledVersion(packageName));
@@ -45,7 +45,7 @@ namespace Skyline.DataMiner.Utils.Linux.SoftwareBundleManager.Tests
 		{
 			string packageName = "rpm";
 			var linux = new Mock<ILinux>();
-			var response = System.IO.File.ReadAllText(@"PackageManager\UpgradableRhelRpmResponse.txt");
+			var response = System.IO.File.ReadAllText(System.IO.Path.Combine("PackageManager", "UpgradableRhelRpmResponse.txt"));
 			linux.Setup(l => l.Connection.RunCommand(It.IsAny<string>(), null)).Returns(response);
 			var packageManager = new RhelSoftwareBundleManager(linux.Object);
 			Assert.AreEqual("4.11.3-48.el7_9", packageManager.GetUpgradeVersion(packageName));
